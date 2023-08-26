@@ -30,14 +30,15 @@ namespace DealershipAuto_Manager.Repositories
             return _clients;
         }
 
-        public void Update(Guid clientId, Client client)
+        public void Update(Client client)
         {
-            var clientToUpdate = _clients.FirstOrDefault(q => q.Id == clientId);
+            var clientUpdate = _clients.FirstOrDefault(q => q.Id == client.Id);
 
-            if (clientToUpdate != null)
+            if (clientUpdate != null)
             {
-                clientToUpdate.Name = client.Name;
-                clientToUpdate.IsCompany = client.IsCompany;
+                clientUpdate.Name = client.Name;
+                clientUpdate.IsCompany = client.IsCompany;
+                
             }
         }
     }

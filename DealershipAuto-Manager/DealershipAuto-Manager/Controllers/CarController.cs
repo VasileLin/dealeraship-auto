@@ -1,4 +1,5 @@
-﻿using DealershipAuto_Manager.Models;
+﻿using DealershipAuto_Manager.Dtos;
+using DealershipAuto_Manager.Models;
 using DealershipAuto_Manager.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace DealershipAuto_Manager.Controllers
         [HttpPost]
         [Route("cars")]
         [ActionName("Add a car")]
-        public IActionResult Add(Car car)
+        public IActionResult Add(AddCarDto car)
         {
             _carService.Add(car);
             return Ok();
@@ -42,7 +43,7 @@ namespace DealershipAuto_Manager.Controllers
 
         [HttpPut]
         [Route("cars/{carId}")]
-        public IActionResult Update(Guid carId,Car car)
+        public IActionResult Update(Guid carId,UpdateCarDto car)
         {
             _carService.Update(carId,car);
             return Ok();
