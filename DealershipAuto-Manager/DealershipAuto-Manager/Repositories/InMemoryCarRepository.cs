@@ -30,9 +30,9 @@ namespace DealershipAuto_Manager.Repositories
             return _cars;
         }
 
-        public void Update(Guid carId, Car car)
+        public void Update(Car car)
         {
-            var carToUpdate = _cars.FirstOrDefault(q => q.Id == carId);
+            var carToUpdate = _cars.FirstOrDefault(q => q.Id == car.Id);
 
             if (carToUpdate != null)
             {
@@ -41,7 +41,6 @@ namespace DealershipAuto_Manager.Repositories
                 carToUpdate.Category = car.Category;
                 carToUpdate.Price = car.Price;
                 carToUpdate.ProductionYear = car.ProductionYear;
-                carToUpdate.IsSold = car.IsSold;
             }
         }
     }

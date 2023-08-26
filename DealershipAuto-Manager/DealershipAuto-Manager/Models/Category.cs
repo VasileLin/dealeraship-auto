@@ -2,6 +2,7 @@
 {
     public enum Category
     {
+        Unspecified,
         SUV,
         Hachback,
         Universal,

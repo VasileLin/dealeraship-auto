@@ -1,4 +1,5 @@
-﻿using DealershipAuto_Manager.Models;
+﻿using DealershipAuto_Manager.Dtos;
+using DealershipAuto_Manager.Models;
 using DealershipAuto_Manager.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,15 +16,15 @@ namespace DealershipAuto_Manager.Controllers
         }
 
         [HttpPost]
-        [Route("clients")]
-        public IActionResult Add(Client client) 
+        [Route("clients")] //POST api/clients
+        public IActionResult Add(AddClientDto client) 
         {
             _clientService.Add(client);
             return Ok();
         }
 
         [HttpGet]
-        [Route("clients")]
+        [Route("clients")] //GET api/clients
         public IActionResult GetAll()
         {
             var result = _clientService.GetAll();
@@ -31,7 +32,7 @@ namespace DealershipAuto_Manager.Controllers
         }
 
         [HttpGet]
-        [Route("clients/{idClient}")]
+        [Route("clients/{idClient}")] //GET api/clients/{idClient}
         public IActionResult GetById(Guid idClient)
         {
             var result = _clientService.Get(idClient);
@@ -39,15 +40,15 @@ namespace DealershipAuto_Manager.Controllers
         }
 
         [HttpPut]
-        [Route("clients/{idClient}")]
-        public IActionResult Update(Guid idClient, Client client)
+        [Route("clients/{idClient}")] //PUT api/clients/{idClient}
+        public IActionResult Update(Guid idClient, UpdateClientDto client)
         {
             _clientService.Update(idClient, client);
             return Ok(); 
         }
 
         [HttpDelete]
-        [Route("clients/{idClient}")]
+        [Route("clients/{idClient}")] //PUT api/clients/{idClient}
         public IActionResult Delete(Guid idClient)
         {
             _clientService.Delete(idClient);

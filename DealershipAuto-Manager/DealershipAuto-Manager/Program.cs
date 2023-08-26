@@ -17,6 +17,10 @@ namespace DealershipAuto_Manager
             builder.Services.AddScoped<ICarRepository, InMemoryCarRepository>();
             builder.Services.AddScoped<IClientService, ClientService>();
             builder.Services.AddScoped<IClientRepository, InMemoryClientRepository>();
+            builder.Services.AddScoped<ICarValidator, CarValidator>();
+            builder.Services.AddScoped<IClientValidator, ClientValidator>();
+            builder.Services.AddScoped<ISaleService, SaleService>();
+            builder.Services.AddScoped<ISaleRepository, InMemorySaleRepository>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
