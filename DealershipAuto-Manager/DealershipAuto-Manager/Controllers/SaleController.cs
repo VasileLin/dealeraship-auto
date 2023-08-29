@@ -21,5 +21,21 @@ namespace DealershipAuto_Manager.Controllers
             _saleService.Add(saleDto);
             return Ok();
         }
+
+        [HttpGet]
+        [Route("sales")]
+        public IActionResult GetAll()
+        {
+            var result = _saleService.GetAll();
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        [Route("sales/{saleId}")]
+        public IActionResult Delete(Guid saleId)
+        {
+            _saleService.Delete(saleId);
+            return NoContent();
+        }
     }
 }
