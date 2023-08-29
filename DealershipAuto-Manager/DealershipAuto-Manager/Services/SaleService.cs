@@ -28,14 +28,16 @@ namespace DealershipAuto_Manager.Services
             if (!isValidCar || !isValidClient || saleDto.FinalPrice < 0)
             {
                 throw new ArgumentException("Invalid sale data. Could not register the sale.");
-            } 
+            }
 
             var sale = new Sale
             {
                 Id = Guid.NewGuid(),
                 Date = DateTime.UtcNow,
+                CarId = car.Id,
                 Car = car,
                 Client = client,
+                ClientId = client.Id,
                 FinalPrice = saleDto.FinalPrice,
             };
 
@@ -46,6 +48,10 @@ namespace DealershipAuto_Manager.Services
             _carRepository.Update(car);
         }
 
+        public void Delete(Guid saleId)
+        {
+            _saleRepository.Delete(saleId);
+        }
 
         public List<Sale> GetAll()
         {
