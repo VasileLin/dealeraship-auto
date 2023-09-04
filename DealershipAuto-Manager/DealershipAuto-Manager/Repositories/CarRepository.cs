@@ -38,6 +38,29 @@ namespace DealershipAuto_Manager.Repositories
             return _dbContext.Cars.ToList();
         }
 
+        public List<Car> GetByFilter(string model,string brand,int productionYear)
+        {
+            var filter = _dbContext.Cars.AsQueryable();
+
+            if (model is not null)
+            {
+                filter = filter.Where(c=>c.Model == model);
+            }
+
+            if (brand is not null)
+            {
+                filter = filter.Where(c => c.Brand == brand);
+            }
+
+            if (productionYear != 0)
+            {
+                filter = filter.Where(c => c.ProductionYear == productionYear);
+            }
+
+            var cars = filter.ToList();
+            return cars;
+        }
+
         public void Update(Car car)
         {
             var carToUpdate = _dbContext.Cars.FirstOrDefault(q => q.Id == car.Id);

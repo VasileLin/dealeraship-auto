@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealershipAuto-Manager", "DealershipAuto-Manager\DealershipAuto-Manager.csproj", "{A4D9AD98-5411-4B31-9A89-BE5589D7572A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DealershipAuto-Manager", "DealershipAuto-Manager\DealershipAuto-Manager.csproj", "{A4D9AD98-5411-4B31-9A89-BE5589D7572A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealershipAuto-Manager.Tests", "DealershipAuto-Manager.Tests\DealershipAuto-Manager.Tests.csproj", "{7AFDBC15-6FDD-4AFC-B1DD-1B21BAD1A60F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A4D9AD98-5411-4B31-9A89-BE5589D7572A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D9AD98-5411-4B31-9A89-BE5589D7572A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D9AD98-5411-4B31-9A89-BE5589D7572A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFDBC15-6FDD-4AFC-B1DD-1B21BAD1A60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFDBC15-6FDD-4AFC-B1DD-1B21BAD1A60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFDBC15-6FDD-4AFC-B1DD-1B21BAD1A60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFDBC15-6FDD-4AFC-B1DD-1B21BAD1A60F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

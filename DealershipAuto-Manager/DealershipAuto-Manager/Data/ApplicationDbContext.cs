@@ -14,7 +14,6 @@ namespace DealershipAuto_Manager.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Sale>().HasKey(am => new { am.CarId, am.ClientId });
             base.OnModelCreating(modelBuilder);
         }
 

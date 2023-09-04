@@ -1,5 +1,6 @@
 ﻿using DealershipAuto_Manager.Data;
 using DealershipAuto_Manager.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DealershipAuto_Manager.Repositories
 {
@@ -30,7 +31,11 @@ namespace DealershipAuto_Manager.Repositories
 
         public List<Sale> GetAll()
         {
-            return _dbContext.Sales.ToList();
+            return _dbContext.Sales
+                .Include(c => c.Car)
+                .Include(c => c.Client)
+                .ToList();
+
         }
     }
 }
