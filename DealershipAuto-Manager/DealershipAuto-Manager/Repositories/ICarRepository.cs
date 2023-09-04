@@ -9,5 +9,6 @@ namespace DealershipAuto_Manager.Repositories
         List<Car> GetAll();
         void Update(Car car);
         void Delete(Guid id);
+        List<Car> GetByFilter(string model, string brand, int productionYear);
     }
 }

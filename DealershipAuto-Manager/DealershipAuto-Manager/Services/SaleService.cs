@@ -34,10 +34,8 @@ namespace DealershipAuto_Manager.Services
             {
                 Id = Guid.NewGuid(),
                 Date = DateTime.UtcNow,
-                CarId = car.Id,
                 Car = car,
                 Client = client,
-                ClientId = client.Id,
                 FinalPrice = saleDto.FinalPrice,
             };
 
